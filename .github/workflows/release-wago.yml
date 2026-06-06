@@ -1,0 +1,30 @@
+name: Publish to Wago
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create addon zip
+        run: |
+          mkdir -p ElvUI_RedtuzkClassic
+          cp -r *.lua *.toc Media/ ElvUI_RedtuzkClassic/
+          zip -r ElvUI_RedtuzkClassic.zip ElvUI_RedtuzkClassic/
+
+      - name: Upload to Wago
+        run: |
+          METADATA=$(cat <<'METAEOF'
+          {"label":"${{ github.event.release.tag_name }}","stability":"stable","changelog":"${{ github.event.release.name }} - See GitHub release for full changelog.","supported_classic_patch":"1.15.8"}
+          METAEOF
+          )
+          curl -f -X POST \
+            -F "metadata=$METADATA" \
+            -F "file=@ElvUI_RedtuzkClassic.zip" \
+            -H "authorization: Bearer ${{ secrets.WAGO_API_TOKEN }}" \
+            -H "accept: application/json" \
+            https://addons.wago.io/api/projects/QNlz9DKe/version
