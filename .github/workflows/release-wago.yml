@@ -7,6 +7,8 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    env:
+      WAGO_API_TOKEN: ${{ secrets.WAGO_API_TOKEN }}
     steps:
       - uses: actions/checkout@v4
 
@@ -18,13 +20,11 @@ jobs:
 
       - name: Upload to Wago
         run: |
-          METADATA=$(cat <<'METAEOF'
-          {"label":"${{ github.event.release.tag_name }}","stability":"stable","changelog":"${{ github.event.release.name }} - See GitHub release for full changelog.","supported_classic_patch":"1.15.8"}
-          METAEOF
-          )
+          TAG="${{ github.event.release.tag_name }}"
+          METADATA="{\"label\":\"${TAG}\",\"stability\":\"stable\",\"changelog\":\"See GitHub release for full changelog.\",\"supported_classic_patch\":\"1.15.8\"}"
           curl -f -X POST \
             -F "metadata=$METADATA" \
             -F "file=@ElvUI_RedtuzkClassic.zip" \
-            -H "authorization: Bearer ${{ secrets.WAGO_API_TOKEN }}" \
+            -H "authorization: Bearer ${WAGO_API_TOKEN}" \
             -H "accept: application/json" \
             https://addons.wago.io/api/projects/QNlz9DKe/version
