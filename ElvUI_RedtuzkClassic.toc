@@ -1,0 +1,21 @@
+## Interface: 11508
+## Author: Redtuzk
+## Version: 2.0.0-classic
+## Title: |cffeb5252Redtuzk|r|cffffffffUI|r Classic
+## Notes: Contains profile layouts designed by Redtuzk
+## RequiredDeps: ElvUI
+## DefaultState: enabled
+## X-Tukui-ProjectID: 6
+## X-Tukui-ProjectFolders: ElvUI_RedtuzkClassic
+
+media\load_media.xml
+Core.lua
+ElvUI_Settings.lua
+Details_Settings.lua
+Plater_Settings.lua
+BigWigs_Settings.lua
+DBM_Settings.lua
+RedtuzkAuras.lua
+media\FPS.lua
+media\Ping.lua
+media\Durability.lua
