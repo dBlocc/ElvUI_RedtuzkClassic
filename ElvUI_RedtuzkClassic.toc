@@ -5,8 +5,7 @@
 ## Notes: Contains profile layouts designed by Redtuzk
 ## RequiredDeps: ElvUI
 ## DefaultState: enabled
-## X-Tukui-ProjectID: 6
-## X-Tukui-ProjectFolders: ElvUI_RedtuzkClassic
+## X-Wago-ID: QNlz9DKe
 
 media\load_media.xml
 Core.lua
