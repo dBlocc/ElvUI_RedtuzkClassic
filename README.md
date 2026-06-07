@@ -6,7 +6,11 @@ Originally created by **Redtuzk** ([original GitLab repo](https://gitlab.com/Red
 
 ## Screenshots
 
-*Coming soon - contributions welcome!*
+![Combat with unit frames](screenshots/01-combat-unit-frames.jpg)
+![City nameplates](screenshots/02-city-nameplates.jpg)
+![Character panel and bags](screenshots/03-character-panel.jpg)
+![Combat in Duskwood](screenshots/04-combat-duskwood.jpg)
+![City aerial view](screenshots/05-city-aerial.jpg)
 
 ## Requirements
 
@@ -73,7 +77,7 @@ Found a bug or want to improve something? PRs are welcome. If you encounter Lua 
 
 ## Also available on
 
-- [CurseForge](https://www.curseforge.com/wow/addons/redtuzkui-classic) (pending approval)
+- [CurseForge](https://www.curseforge.com/wow/addons/redtuzkui-classic)
 - [Wago Addons](https://addons.wago.io/addons/QNlz9DKe)
 
 ## License
