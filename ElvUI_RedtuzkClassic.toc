@@ -1,10 +1,11 @@
 ## Interface: 11508
 ## Author: Redtuzk
-## Version: 2.0.0-classic
+## Version: 2.0.2-classic
 ## Title: |cffeb5252Redtuzk|r|cffffffffUI|r Classic
 ## Notes: Contains profile layouts designed by Redtuzk
 ## RequiredDeps: ElvUI
 ## DefaultState: enabled
+## X-Curse-Project-ID: 1566999
 ## X-Wago-ID: QNlz9DKe
 
 media\load_media.xml

@@ -437,17 +437,12 @@ local function AddCustomTags()
 	E:AddTag('RUI:leadericon', 'GROUP_ROSTER_UPDATE', function(unit)
 			local isLeader = UnitIsGroupLeader(unit)
 			local isAssist = UnitIsGroupAssistant(unit)
-			local icon
 
 			if isLeader then
 					return CreateTextureMarkup([[Interface\groupframe\ui-group-leadericon]], 32, 32, 10, 10, 0, 1, 0, 1, 0, 0)
 			elseif isAssist then
 					return CreateTextureMarkup([[Interface\groupframe\ui-group-assistanticon]], 32, 32, 10, 10, 0, 1, 0, 1, 0, 0)
-			else
-
 			end
-
-			return String
 	end)
 
 	E:AddTag('newLine', 'PLAYER_ENTERING_WORLD', function(unit)
@@ -471,17 +466,12 @@ local function TreantsAreTanksToo()
 	ElvUF.Tags.Methods["RUI:leadericon"] = function(unit)
 			local isLeader = UnitIsGroupLeader(unit)
 			local isAssist = UnitIsGroupAssistant(unit)
-			local icon
 
 			if isLeader then
 					return CreateTextureMarkup([[Interface\groupframe\ui-group-leadericon]], 32, 32, 10, 10, 0, 1, 0, 1, 0, 0)
 			elseif isAssist then
 					return CreateTextureMarkup([[Interface\groupframe\ui-group-assistanticon]], 32, 32, 10, 10, 0, 1, 0, 1, 0, 0)
-			else
-
 			end
-
-			return String
 	end
 	ElvUF.Tags.Events["newLine"] = "PLAYER_ENTERING_WORLD"
 	ElvUF.Tags.Methods["newLine"] = function(unit)
@@ -1066,7 +1056,7 @@ local InstallerData = {
 				DummySLE()
 			end
 			PluginInstallFrame.SubTitle:SetText("Layout")
-			if E.db[MyPluginName].layout ~= "dps" or E.db[MyPluginName].layout ~= "healer" then
+			if E.db[MyPluginName].layout ~= "dps" and E.db[MyPluginName].layout ~= "healer" then
 				E.db[MyPluginName].layout = nil
 			end
 			if E.db[MyPluginName].install_version == nil or E.db[MyPluginName].install_version == Version or not E.db[MyPluginName].layout then
