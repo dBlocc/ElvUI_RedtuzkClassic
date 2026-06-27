@@ -1,6 +1,6 @@
 ## Interface: 11508
 ## Author: Redtuzk
-## Version: 2.0.2-classic
+## Version: 2.0.3-classic
 ## Title: |cffeb5252Redtuzk|r|cffffffffUI|r Classic
 ## Notes: Contains profile layouts designed by Redtuzk
 ## RequiredDeps: ElvUI

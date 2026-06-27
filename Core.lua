@@ -47,10 +47,10 @@ local function NewProfile(new)
 		hideOnEscape = 1,
 		timeout = 0,
 		OnShow = function(self, data)
-		  self.editBox:SetText("RedtuzkUI"); --default text in the editbox
+		  self.EditBox:SetText("RedtuzkUI");
 		end,
 		OnAccept = function(self, data, data2)
-		  local text = self.editBox:GetText()
+		  local text = self.EditBox:GetText()
 		  E.data:SetProfile(text) --ElvUI function for changing profiles, creates a new profile if name doesn't exist
 		  PluginInstallStepComplete.message = "Profile Created"
 		  PluginInstallStepComplete:Show()
@@ -941,10 +941,10 @@ local function createLink()
 	hideOnEscape = 1,
 	timeout = 0,
 	OnShow = function(self, data)
-		self.editBox:SetAutoFocus(false)
-		self.editBox:SetWidth(150)
-		self.editBox:SetText(discordLink); --default text in the editbox
-		self.editBox:HighlightText()
+		self.EditBox:SetAutoFocus(false)
+		self.EditBox:SetWidth(150)
+		self.EditBox:SetText(discordLink);
+		self.EditBox:HighlightText()
 	end,
 	};
 	StaticPopup_Show("DiscordLinkDisplay", "test"); --tell our dialog box to show
@@ -992,6 +992,7 @@ local function InstallComplete()
 	elseif not E.db[MyPluginName]["plater"] then
 		E.private["nameplates"]["enable"] = true
 	end
+	E.db["movers"] = E.db["movers"] or {}
 	E.db["movers"]["ShiftAB"] = "TOP,ElvUIParent,BOTTOM,0,101"
 	ReloadUI()
 end
@@ -1079,10 +1080,10 @@ local InstallerData = {
 				PluginInstallFrame.SubTitle:SetText("Raid Frame Options")
 				PluginInstallFrame.Desc1:SetText("Here you can select some options for Raid Frame styles. \n\nThe Vertical style is the standard RUI raid frame style with all players displaed in a single colum with no groupings.\n\nThe Traditional style is the traditional WoW raid frame style with groups layed out in a grid.")
 				PluginInstallFrame.Option1:Show()
-				PluginInstallFrame.Option1:SetScript("OnClick", function() RUI:RaidFrameStyle("vertical"); E.db[MyPluginName].RaidFrameStyle = style end)
+				PluginInstallFrame.Option1:SetScript("OnClick", function() RUI:RaidFrameStyle("vertical"); E.db[MyPluginName].RaidFrameStyle = "vertical" end)
 				PluginInstallFrame.Option1:SetText("Vertical")
 				PluginInstallFrame.Option2:Show()
-				PluginInstallFrame.Option2:SetScript("OnClick", function() RUI:RaidFrameStyle("traditional"); E.db[MyPluginName].RaidFrameStyle = style end)
+				PluginInstallFrame.Option2:SetScript("OnClick", function() RUI:RaidFrameStyle("traditional"); E.db[MyPluginName].RaidFrameStyle = "traditional" end)
 				PluginInstallFrame.Option2:SetText("Traditional")
 			else
 				PluginInstallFrame.SubTitle:SetText("Raid Frame Options")
